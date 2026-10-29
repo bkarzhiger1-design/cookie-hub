@@ -281,13 +281,13 @@ pcall(function()
     end
 end)
 
--- CREATE MAIN WINDOW
+-- CREATE MAIN WINDOW (Тема заменена на стабильную "Dark", чтобы убрать ошибку)
 local Window = WindUI:CreateWindow({
     Title = "Cookie Hub",
     SubTitle = "v1.0.0 | made by xeavz",
     TabWidth = 160,
     Size = UDim2.fromOffset(600, 520),
-    Theme = "Brown",
+    Theme = "Dark",
     Transparent = true,
     HideSearchBar = false,
     User = {
@@ -2188,8 +2188,8 @@ ConfigureTab:Section({ Title = "UI Theme Settings" })
 ConfigureTab:Dropdown({
     Title = "UI Theme",
     Desc = "Select your preferred WindUI color theme",
-    Values = { "Brown", "Dark", "Light", "Rose", "Emerald", "Midnight", "Red", "Aquamarine", "Amethyst" },
-    Default = "Brown",
+    Values = { "Dark", "Light", "Rose", "Emerald", "Midnight", "Red", "Aquamarine", "Amethyst" },
+    Default = "Dark",
     Callback = function(selectedTheme)
         pcall(function()
             if Window and Window.SetTheme then
@@ -2243,7 +2243,7 @@ SettingsTab:Button({
 SettingsTab:Section({ Title = "Community & Links" })
 
 local DiscordInvite = "https://discord.gg/v2BxRgTEP"
-local ScriptBloxLink = "https://scriptblox.com/u/guyy"
+LocationLink = "https://scriptblox.com/u/guyy"
 
 SettingsTab:Button({
     Title = "Join Discord Server",
@@ -2263,7 +2263,7 @@ SettingsTab:Button({
     Desc = "Copy ScriptBlox channel link to clipboard",
     Callback = function()
         if setclipboard then
-            setclipboard(ScriptBloxLink)
+            setclipboard("https://scriptblox.com/u/guyy")
             WindUI:Notify({ Title = "ScriptBlox Link", Content = "ScriptBlox link copied to clipboard!", Duration = 3 })
         else
             WindUI:Notify({ Title = "Error", Content = "Failed to copy link.", Duration = 3 })
