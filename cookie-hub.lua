@@ -281,13 +281,13 @@ pcall(function()
     end
 end)
 
--- CREATE MAIN WINDOW (Тема заменена на стабильную "Dark", чтобы убрать ошибку)
+-- CREATE MAIN WINDOW (Theme set to Emerald)
 local Window = WindUI:CreateWindow({
     Title = "Cookie Hub",
     SubTitle = "v1.0.0 | made by xeavz",
     TabWidth = 160,
     Size = UDim2.fromOffset(600, 520),
-    Theme = "Dark",
+    Theme = "Emerald",
     Transparent = true,
     HideSearchBar = false,
     User = {
@@ -2188,8 +2188,8 @@ ConfigureTab:Section({ Title = "UI Theme Settings" })
 ConfigureTab:Dropdown({
     Title = "UI Theme",
     Desc = "Select your preferred WindUI color theme",
-    Values = { "Dark", "Light", "Rose", "Emerald", "Midnight", "Red", "Aquamarine", "Amethyst" },
-    Default = "Dark",
+    Values = { "Emerald", "Dark", "Light", "Rose", "Midnight", "Red", "Aquamarine", "Amethyst" },
+    Default = "Emerald",
     Callback = function(selectedTheme)
         pcall(function()
             if Window and Window.SetTheme then
@@ -2243,7 +2243,6 @@ SettingsTab:Button({
 SettingsTab:Section({ Title = "Community & Links" })
 
 local DiscordInvite = "https://discord.gg/v2BxRgTEP"
-LocationLink = "https://scriptblox.com/u/guyy"
 
 SettingsTab:Button({
     Title = "Join Discord Server",
